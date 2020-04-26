@@ -1,0 +1,60 @@
+.bgSignupInfo3{
+    display: flex;
+    background-color: #F4F4FB;
+    font-family: 'Montserrat', sans-serif;
+}
+.dailyQuestion1{
+    display: flex;
+    height: 49vw;
+    font-size: 3vw;
+    width: 48%;
+    justify-content: center;
+    align-items: center;
+}
+.answer3{
+    width:48%;
+    background-color: #50E3C2;
+    font-size: 2vw;
+}
+.iconNext3{
+    display: flex;
+    background-color: #50E3C2;
+    justify-content: center;
+    align-items: center;
+}
+.INext3{
+    width: 4vw;
+}
+.next3{
+    border: none;
+    background-color: #50E3C2;
+    
+}
+.line31{
+    margin-top: 13vw;
+    margin-left: 15vw;
+}
+.line32{
+    margin-top: 1vw;
+    margin-left: 18vw;
+}
+.line33{
+    margin-top: 1vw;
+    margin-left: 18vw;
+}
+.line34{
+    margin-top: 1vw;
+    margin-left: 18vw;
+}
+.line35{
+    margin-top: 1vw;
+    margin-left: 18vw;
+}
+.line36{
+    margin-top: 1vw;
+    margin-left: 15vw;
+}
+.line37{
+    margin-top: 1vw;
+    margin-left: 18vw;
+}

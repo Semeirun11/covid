@@ -1,0 +1,54 @@
+.bgTermOfUse{
+    background-color: #F4F4FB;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .content1{
+    padding-top:5vw;
+    padding-left: 15vw;
+    padding-bottom: 9.5vw;
+  }
+  .headSignup{
+    color: #4A4A4A;
+    font-size: 3vw;
+    font-style: normal;
+    font-weight: bold;
+  }
+  .info-box{
+      border: 1px solid black;
+      margin-top: 1vw;
+      margin-left: 4vw;
+      background-color: white;
+      width: 60vw;
+      height: 30vw;
+      overflow: scroll;
+  }
+  .info{
+      margin-left: 2vw;
+      margin-top: 2vw;
+      margin-right: 2vw;
+  }
+  .signinBtn{
+      margin-top: 1vw;
+  }
+  .disagree{
+    margin-left: 19vw;
+    background: #50E3C2;
+    border-radius: 20px;
+    color: #FFFFFF;
+    border: none;
+    width: 7.5vw;
+    height: 4vw;
+    font-weight: bold;
+    font-size: 1.1vw;
+  }
+  .agree{
+    margin-left: 15vw;
+    background: #50E3C2;
+    border-radius: 20px;
+    color: #FFFFFF;
+    border: none;
+    width: 7.5vw;
+    height: 4vw;
+    font-weight: bold;
+    font-size: 1.1vw;
+  }

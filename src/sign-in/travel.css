@@ -1,0 +1,98 @@
+.bgSignupInfo7{
+    display: flex;
+    background-color: #F4F4FB;
+    font-family: 'Montserrat', sans-serif;
+}
+.dailyQuestion5{
+    display: flex;
+    height: 49vw;
+    font-size: 2vw;
+    width: 48% ; 
+    justify-content: center;
+    align-items: center;
+}
+.outputDate{
+    margin-left: 4.8vw;
+  width: 8vw;
+  height: 2vw;
+}
+.answer7{
+    width: 48%;
+    background-color: #50E3C2;
+    font-size: 2vw;
+}
+.line71{
+    margin-top: 5vw;
+    margin-left: 14vw;
+}
+.line72{
+    margin-left: 14vw;
+}
+.line73{
+ 
+    margin-left: 14vw;
+}
+.line74{
+   
+    margin-left: 14vw;
+ 
+}
+.line75{
+  
+    margin-left: 14vw;
+
+}
+.line76{
+    margin-top: 1vw;
+    margin-left: 14vw;
+}
+.line77{
+    margin-left: 13vw;
+}
+.line78{
+    margin-top: 1vw;
+    margin-left: 14vw;
+}
+.line79{
+   
+    margin-left: 14vw;
+    margin-top: 1vw;
+}
+.line710{
+  
+    margin-left: 14vw;
+    margin-top: 1vw;
+}
+.line711{
+  
+    margin-left: 14vw;
+    margin-top: 1vw;
+}
+.line712{
+  
+    margin-left: 14vw;
+    margin-top: 1vw;
+}
+.iconNext7{
+    display: flex;
+    background-color: #50E3C2;
+    justify-content: center;
+    align-items: center;
+}
+.INext7{
+    width: 4vw;
+}
+.next7{
+    border: none;
+    background-color: #50E3C2;
+    
+}
+.selectTypeAddress{
+    width: 16vw;
+    height: 2vw;
+    background: #FFFFFF;
+    border: 2px solid #C7C6D5;
+    color: #4A4A4A;
+    font-size: 1.1vw;
+    margin-left: 1vw;
+}

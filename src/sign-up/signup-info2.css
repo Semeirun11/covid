@@ -1,0 +1,75 @@
+.bgDisease{
+    display: flex;
+    background-color: #F4F4FB;
+    font-family: 'Montserrat', sans-serif;
+}
+.question2{
+    display: flex;
+    height: 47vw;
+    font-size: 3vw;
+    width: 48%;
+    justify-content: center;
+    align-items: center;
+}
+.answer2{
+    width:48%;
+    background-color: #50E3C2;
+}
+.iconNext2{
+    display: flex;
+    background-color: #50E3C2;
+    justify-content: center;
+    align-items: center;
+    
+}
+.next2{
+    border: none;
+    background-color: #50E3C2;
+}
+.INext2{
+    width: 4vw;
+}
+.content2{
+    margin-top: 4vw;
+    margin-left: 15vw;
+    font-size: 2vw;
+}
+
+.line22{
+    margin-top: 1vw;
+}
+.line23{
+    margin-top: 1vw;
+    margin-left: 3vw;
+}
+.line24{
+    margin-top: 1vw;
+    margin-left: 3vw;
+}
+.line25{
+    margin-top: 1vw;
+    margin-left: 3vw;
+}
+.line26{
+    margin-top: 1vw;
+    margin-left: 3vw;
+}
+.line27{
+    margin-top: 1vw;
+    margin-left: 3vw;
+}
+.line28{
+    margin-top: 1vw;
+    margin-left: 3vw;
+}
+.line29{
+    margin-top: 1vw;
+    margin-left: 3vw;
+}
+.line210{
+    margin-top: 1vw;
+    margin-left: 3vw;
+}
+.line211{
+    margin-top: 1vw;
+}

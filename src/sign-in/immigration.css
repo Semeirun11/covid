@@ -1,0 +1,109 @@
+.bgSignupInfo6{
+    display: flex;
+    background-color: #F4F4FB;
+    font-family: 'Montserrat', sans-serif;
+}
+.dailyQuestion4{
+    display: flex;
+    height: 49vw;
+    font-size: 3vw;
+    width: 48% ; 
+    justify-content: center;
+    align-items: center;
+}
+.answer6{
+    width: 48%;
+    background-color: #50E3C2;
+    font-size: 2vw;
+}
+
+.line61{
+    margin-top: 15vw;
+    margin-left: 14vw;
+}
+.line62{
+    margin-top: 1vw;
+    margin-left: 14vw;
+}
+.line63{
+    margin-top: 1vw;
+    margin-left: 14vw;
+}
+.line64{
+   
+    margin-left: 14vw;
+    margin-top: 1vw;
+}
+.line65{
+  
+    margin-left: 14vw;
+    margin-top: 1vw;
+}
+.iconNext6{
+    display: flex;
+    background-color: #50E3C2;
+    justify-content: center;
+    align-items: center;
+}
+.INext6{
+    width: 4vw;
+}
+.next6{
+    border: none;
+    background-color: #50E3C2;
+    
+}
+.inputAddress{
+    width: 22vw;
+    height: 2vw;
+    background: #FFFFFF;
+    border: 2px solid #C7C6D5;
+    color: #4A4A4A;
+    font-size: 1.1vw;
+    margin-left: 0vw;
+}
+.inputByWhere{
+    width: 22vw;
+    height: 2vw;
+    background: #FFFFFF;
+    border: 2px solid #C7C6D5;
+    color: #4A4A4A;
+    font-size: 1.1vw;
+    margin-left: 0vw;
+}
+.selectDistrict{
+    width: 10vw;
+    height: 2vw;
+    background: #FFFFFF;
+    border: 2px solid #C7C6D5;
+    color: #4A4A4A;
+    font-size: 1.1vw;
+    margin-left: 1vw;
+}
+.selectAmphoe{
+    width: 10vw;
+    height: 2vw;
+    background: #FFFFFF;
+    border: 2px solid #C7C6D5;
+    color: #4A4A4A;
+    font-size: 1.1vw;
+    margin-left: 1vw;
+}
+.selectProvince{
+    width: 10vw;
+    height: 2vw;
+    background: #FFFFFF;
+    border: 2px solid #C7C6D5;
+    color: #4A4A4A;
+    font-size: 1.1vw;
+    margin-left: 1vw;
+}
+.postal{
+    width: 10vw;
+    height: 2vw;
+    background: #FFFFFF;
+    border: 2px solid #C7C6D5;
+    color: #4A4A4A;
+    font-size: 1.1vw;
+    margin-left: 1vw;
+}

@@ -1,0 +1,127 @@
+.bgSignupInfo5{
+    display: flex;
+    background-color: #F4F4FB;
+    font-family: 'Montserrat', sans-serif;
+}
+.dailyQuestion3{
+    display: flex;
+    height: 49vw;
+    font-size: 3vw;
+    width: 48% ; 
+    justify-content: center;
+    align-items: center;
+}
+.answer5{
+    width: 48%;
+    background-color: #50E3C2;
+    font-size: 2vw;
+}
+
+.line51{
+    margin-top: 7vw;
+    margin-left: 10vw;
+}
+.line52{
+    margin-top: 1vw;
+    margin-left: 14.5vw;
+}
+.line53{
+    margin-top: 1vw;
+    margin-left: 14.5vw;
+}
+.line54{
+   
+    margin-left: 14.5vw;
+}
+.line55{
+  
+    margin-left: 14.5vw;
+}
+.line56{
+ 
+    margin-left: 14.5vw;
+}
+.line57{
+    margin-top: 1vw;
+    margin-left: 14.5vw;
+}
+.line58{
+    margin-top: 1vw;
+    margin-left: 12.5vw;
+}
+.line59{
+    margin-top: 1vw;
+    margin-left: 14.5vw;
+}
+.line510{
+    margin-top: 1vw;
+    margin-left: 14.5vw;
+}
+.line511{
+    margin-top: 1vw;
+    margin-left: 10vw; 
+}
+.inputAddress{
+    width: 22vw;
+    height: 2vw;
+    background: #FFFFFF;
+    border: 2px solid #C7C6D5;
+    color: #4A4A4A;
+    font-size: 1.1vw;
+    margin-left: 0vw !important;
+}
+.isolation_placetype{
+    width: 22vw;
+    height: 2vw;
+    background: #FFFFFF;
+    border: 2px solid #C7C6D5;
+    color: #4A4A4A;
+    font-size: 1.1vw;
+    margin-left: 0vw;
+}
+.selectDistrict{
+    width: 10vw;
+    height: 2vw;
+    background: #FFFFFF;
+    border: 2px solid #C7C6D5;
+    color: #4A4A4A;
+    font-size: 1.1vw;
+    margin-left: 1vw;
+}
+.selectProvince{
+    width: 10vw;
+    height: 2vw;
+    background: #FFFFFF;
+    border: 2px solid #C7C6D5;
+    color: #4A4A4A;
+    font-size: 1.1vw;
+    margin-left: 1vw;
+}
+.inputPostal{
+    width: 10vw;
+    height: 2vw;
+    background: #FFFFFF;
+    border: 2px solid #C7C6D5;
+    color: #4A4A4A;
+    font-size: 1.1vw;
+    margin-left: 1vw;
+}
+.iconNext5{
+    display: flex;
+    background-color: #50E3C2;
+    justify-content: center;
+    align-items: center;
+}
+.INext5{
+    width: 4vw;
+}
+.next5{
+    border: none;
+    background-color: #50E3C2;
+    
+}
+.ICalendar{
+    margin-left: 1vw;
+    width: 2vw;
+    height: 2vw;
+}

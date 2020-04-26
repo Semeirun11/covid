@@ -1,38 +1,74 @@
-.App {
-  text-align: center;
+.bgLogin{
+  background-color: #F4F4FB;
+  font-family: 'Montserrat', sans-serif;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.content{
+  padding-top:10vw;
+  padding-left: 35vw;
+  padding-bottom: 22vw;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.headSignin{
+  color: #4A4A4A;
+  font-size: 3vw;
+  font-style: normal;
+  font-weight: bold;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.e-mail{
+  margin-left: 3vw;
+  color: #4A4A4A;
+  font-size: 2vw;
+  font-style: normal;
 }
-
-.App-link {
-  color: #61dafb;
+.inputE-mail{
+  width: 20vw;
+  height: 2vw;
+  margin-left: 3vw;
+  background: #FFFFFF;
+  border: 2px solid #C7C6D5;
+  color: #4A4A4A;
+  font-size: 1.1vw;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.password1{
+  margin-left: 3vw;
+  color: #4A4A4A;
+  font-size: 2vw;
+  font-style: normal;
 }
+.inputPassword{
+  width: 20vw;
+  height: 2vw;
+  margin-left: 3vw;
+  background: #FFFFFF;
+  border: 2px solid #C7C6D5;
+  color: #4A4A4A;
+  font-size: 1.1vw;
+}
+ .btSigninSingout{
+   margin-top:1vw;
+   display: flex;
+   margin-left: 10vw;
+   font-weight: bold;
+   
+ }
+ .signup{
+    color: #4A4A4A;
+    text-decoration-line: underline;
+    align-self:flex-end;
+    font-size: 1.2vw;
+    
+ }
+ .text{
+   margin-left: 1vw;
+   align-self:flex-end;
+ }
+ .signin{
+   margin-left: 1vw;
+   background: #50E3C2;
+   border-radius: 20px;
+   color: #FFFFFF;
+   border: none;
+   width: 6.5vw;
+   height: 3vw;
+   font-weight: bold;
+   font-size: 1.1vw;
+ }

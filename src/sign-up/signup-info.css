@@ -1,0 +1,158 @@
+.bgSignupInfo{
+    background-color: #F4F4FB;
+    font-family: 'Montserrat', sans-serif;
+    height: 47vw;
+  }
+.head{
+  color: #4A4A4A;
+  font-weight: 800;
+  font-size: 3vw;
+  margin-left: 25vw;
+  padding-top: 4vw
+}
+.content-regis{
+  margin-left: 30vw;
+  font-size: 2vw;
+  margin-top: 1vw;
+  width: 50vw;
+  height: 35vw;
+  overflow: scroll;
+}
+.line1{
+  display: flex;
+}
+.name{
+  margin-left: 2vw;
+  width: 32.5vw;
+  font-size: 1.3vw;
+}
+
+.surename{
+  margin-left: 2vw;
+}
+.inputSureName{
+  margin-left: 2vw;
+  width: 15vw;
+}
+
+.line2{
+  display: flex;
+  margin-top:1.5vw;
+}
+.inputDate{
+  margin-left: 2vw;
+  width: 8vw;
+  font-size: 1.3vw;
+  height: 2vw;
+}
+.personal_id{
+  margin-left: 2vw;
+  width: 25vw;
+  font-size: 1.3vw;
+}
+.email{
+  margin-left: 2vw;
+  width: 25vw;
+  font-size: 1.3vw;
+}
+.password{
+  margin-left: 2vw;
+  width: 25vw;
+  font-size: 1.3vw;
+}
+.line3{
+  display: flex;
+  margin-top:1.5vw;
+}
+
+.sex{
+  margin-left: 2vw;
+}
+.line4{
+  display: flex;
+  margin-top:1.5vw;
+}
+.job{
+  margin-left: 2vw;
+  width: 12vw;
+  font-size: 1.3vw;
+}
+
+.telephone{
+  margin-left: 2vw;
+  width: 10vw;
+  font-size: 1.3vw;
+}
+.line6{
+  display: flex;
+  margin-top:1.5vw;
+}
+.address_id{
+  margin-left: 2vw !important;
+  width: 34.2vw;
+  font-size: 1.3vw;
+}
+.line7{
+  display: flex;
+  margin-top:1.5vw;
+}
+.district{
+  margin-left: 1vw;
+  width: 8.5vw;
+  font-size: 1.3vw;
+}
+.amphoe1{
+  margin-left: 1vw;
+}
+.amphoe{
+  margin-left: 1vw;
+  width: 8.5vw;
+  font-size: 1.3vw;
+}
+.province{
+  margin-left: 1vw;
+  width: 8.5vw;
+  font-size: 1.3vw;
+}
+.province1{
+  margin-left: 1vw;
+}
+.selectProvinces{
+  margin-left: 2vw;
+  width: 10vw;
+}
+.line5{
+  display: flex;
+  margin-top:1.5vw;
+}
+.num_live{
+  margin-left: 1vw;
+  margin-right: 1vw;
+  width: 3vw;
+  font-size: 1.3vw;
+}
+.postal{
+  margin-left: 2vw !important;
+  font-size: 1.3vw !important;
+}
+.line8{
+  display: flex;
+  margin-top:1.5vw;
+}
+.selectPeopleliving{
+  margin-left: 2vw;
+  width: 3vw;
+}
+.next{
+  margin-top: 1.5vw;
+  margin-left: 38vw;
+  margin-bottom: 1.9vw;
+  background: #50E3C2;
+  border-radius: 20px;
+  color: #FFFFFF;
+  border: none;
+  width: 7.5vw;
+  height: 4vw;
+  font-weight: bold;
+  font-size: 1.1vw;
+}
