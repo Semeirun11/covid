@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 import buttonNext from "./play-button.png";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./assessment.css";
@@ -38,14 +39,11 @@ class Assessment extends Component {
   handleriskChange = (event) =>
     this.setState({ interaction: event.target.checked });
 
-    connect=()=> {
+     connect= async()=> {
       var data = this.state
       console.log(this.state)
-      fetch('http://localhost:8088/assessment', {
-        method: 'post',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-      });
+      await axios.post("http://localhost:8088/assessment", JSON.stringify(data), {withCredentials:true,headers: {"Content-Type": "application/json"}});
+      await axios.get("http://localhost:8088/assessment", {withCredentials:true,headers: {"Content-Type": "application/json"}});
     };
   render() {
     return (

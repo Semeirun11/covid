@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 import buttonNext from "./play-button.png"
 import "./immigration.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
@@ -42,15 +43,10 @@ class Immigration extends Component {
     });
   }
 
-
   connect=()=> {
     var data = this.state
     console.log(this.state)
-    fetch('http://localhost:8088/accommodation', {
-      method: 'post',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
-    });
+    axios.post("http://localhost:8088/accommodation", JSON.stringify(data),{withCredentials:true,headers: {"Content-Type": "application/json"}})
   };
 
   render() {

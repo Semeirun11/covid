@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import buttonNext from "./play-button.png"
 import DatePicker from "react-datepicker";
+import axios from "axios";
 import "react-datepicker/dist/react-datepicker.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import moment from "moment";
@@ -57,11 +58,7 @@ class Travel extends Component {
   connect=()=> {
     var data = this.state
     console.log(this.state)
-    fetch('http://localhost:8088/travel-history', {
-      method: 'post',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
-    });
+    axios.post("http://localhost:8088/travel-history", JSON.stringify(data),{withCredentials:true,headers: {"Content-Type": "application/json"}})
   };
   render() {
     const {inputAddress,inputPostal}=this.state

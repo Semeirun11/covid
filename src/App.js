@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./App.css";
 import TermOfUse from "./sign-up/TermOfUse.js";
@@ -23,12 +24,7 @@ class App extends Component {
   connect = () => {
     var data = this.state;
     console.log(this.state);
-    fetch("http://localhost:8088/sign-in", {
-      method: "post",
-      // credentials: 'include',
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    })
+        axios.post("http://localhost:8088/sign-in", JSON.stringify(data),{withCredentials:true,headers: {"Content-Type": "application/json"}})
     .then((res) => {
       if (res.status == 200) {
           window.location.replace("http://localhost:3000/Assessment")

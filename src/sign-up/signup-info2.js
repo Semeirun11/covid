@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./signup-info2.css";
 import buttonNext from "./play-button.png"
-
+import axios from "axios";
 class Disease extends React.Component {
   
   constructor(props){
@@ -70,11 +70,7 @@ class Disease extends React.Component {
   connect=()=> {
     var data = this.state
     console.log(this.state)
-    fetch('http://localhost:8088/sign-up', {
-      method: 'post',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
-    });
+    axios.post("http://localhost:8088/sign-up", JSON.stringify(data),{withCredentials:true,headers: {"Content-Type": "application/json"}})
   };
   render() {
     const {dc_other}=this.state

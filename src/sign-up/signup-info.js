@@ -4,7 +4,7 @@ import "./signup-info.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import moment from "moment";
-
+import axios from "axios";
 class User extends Component {
   constructor(props) {
     super(props);
@@ -74,20 +74,24 @@ class User extends Component {
       num_live: e.target.value,
     });
   };
+  loadProvince = async() =>{
+    var provinceList = "";
+    var data = "";
+    data = await fetch('http://localhost:8088/address')
+    provinceList = await data.json()
+    console.log(provinceList)
+  }
 
   connect=()=> {
     var data = this.state
     console.log(this.state)
-    fetch('http://localhost:8088/sign-up', {
-      method: 'post',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
-    });
+    axios.post("http://localhost:8088/sign-up", JSON.stringify(data),{withCredentials:true,headers: {"Content-Type": "application/json"}})
   };
   
 
   render() {
     const {
+      provinceList,
       name,
       personal_id,
       password,
@@ -218,9 +222,11 @@ class User extends Component {
               </select>
               <div className="province1">จังหวัด</div>
               <select className="province" onChange={this.onProvinceChange}>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
+                {this.provinceList.map( p1=> (
+                  (
+                    <option key={p1} value={p1}> {p1} </option>
+                  )
+                ))}
               </select>
             </div>
             <div className="line5">
@@ -241,11 +247,11 @@ class User extends Component {
               </select>
               คน
             </div>
-            <Link to={"/"}>
-            <button className="next" type="submit" onClick={this.connect}>
+            {/* <Link to={"/"}> */}
+            <button className="next" type="submit" onClick={this.loadProvince}>
               NEXT
             </button>
-            </Link>
+            {/* </Link> */}
           </div>
 
       </div>
