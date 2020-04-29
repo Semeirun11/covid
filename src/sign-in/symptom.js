@@ -26,7 +26,9 @@ class Symptom extends Component {
   handleSnotChange = event =>
     this.setState({ snot: event.target.checked, })
 
-
+    changeHandler=(e)=>{
+      this.setState({[e.target.className]:e.target.value})
+    }
     state = { tired: false }
   handleTiredChange = event =>
     this.setState({ tired: event.target.checked, })

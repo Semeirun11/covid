@@ -35,7 +35,7 @@
     padding-left: 9vw;
 }
 .symptom{
-    padding-left: 11vw;
+    padding-left: 12vw;
 }
 .immigration{
     padding-left: 11vw;
@@ -54,10 +54,33 @@
     overflow: scroll;
 }
 .dataResult{
+    display: flex;
     margin-top: 1vw;
     margin-left: 3vw;
+    color:white;
     background-color: #1A2744;
     width: 80vw;
     height: 6vw;
     border-radius: 2vw;
+    align-items: center;
 }
+.dateStampHistory{
+    padding-left: 5vw;
+    background-color: ;
+}
+.symptomHistory{
+    padding-left: 4vw;
+}
+.symptomHistory{
+    padding-left: 11vw;
+}
+.immigrationHistory{
+    padding-left: 14vw;
+}
+.travellingHistory{
+    padding-left: 13vw;
+}
+.interactionHistory{
+    padding-left: 14vw;
+}
+

@@ -11,6 +11,7 @@ class Assessment extends Component {
       immigration: false,
       travelling: false,
       interaction: false,
+      self_protection: ''
     };
   }
 
@@ -128,14 +129,14 @@ class Assessment extends Component {
             <div className="line37">
               <input
                 type="radio"
-                value="false"
+                value="true"
                 name="protectOrNot"
                 onChange={this.onProtectOrNotChange}
               ></input>
               ป้องกัน
               <input
                 type="radio"
-                value="true"
+                value="false"
                 name="protectOrNot"
                 onChange={this.onProtectOrNotChange}
               ></input>

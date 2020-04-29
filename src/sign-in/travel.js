@@ -80,6 +80,7 @@ class Travel extends Component {
     
             <div className="line76"><div className="typeAddress">ประเภทของสถานที่</div></div>
             <div className="line77"><select className="selectTypeAddress" onChange={this.onTypeStateChange}>
+            <option value="null">เลือกลักษณะของสถานที่</option>
               <option value="Darkplace">สถานที่ปิดทึบ</option>
               <option value="Crowdedplace">พื้นที่มีคนแออัด</option>
             </select></div>

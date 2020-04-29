@@ -94,6 +94,7 @@ class Isolation extends Component {
           </div>
           <div className="line54">
             <select className="isolation_place" onChange={this.isolation_place}>
+              <option value="null">เลือกสถานที่</option>
               <option value="Clinic">คลินิก</option>
               <option value="Hospital">โรงพยาบาล</option>
               <option value="Phamacy">ร้านขายยา</option>
