@@ -11,7 +11,8 @@ class Travel extends Component {
   constructor(props){
     super(props)
     this.state={
-      address:''
+      address:'',
+      interaction: localStorage.getItem("interaction"),
     }
   }
   changeHandler=(e)=>{
@@ -60,6 +61,13 @@ class Travel extends Component {
     var data = this.state
     console.log(this.state)
     axios.post("http://localhost:8088/travel-history", JSON.stringify(data),{withCredentials:true,headers: {"Content-Type": "application/json"}})
+    if(this.state.interaction=="true"){
+      console.log("hh")
+      window.location.href = `/Interaction`;
+    }
+    if(this.state.interaction=="false"){
+      window.location.href = `/history`;
+    }
   };
   render() {
     const {address,inputPostal}=this.state
@@ -95,9 +103,7 @@ class Travel extends Component {
             </div>           
             </div>
             <div className="iconNext7">
-              <Link to={"/result"}>
                 <button className="next7" type="submit" onClick={this.connect}><img className="INext7" src={buttonNext}/></button>
-                </Link>
                 </div>
         </div>
         </form>

@@ -23,6 +23,9 @@ class Isolation extends Component {
       soreThroat:localStorage.getItem("soreThroat"),
       steam:localStorage.getItem("steam"),
       fever:localStorage.getItem("fever"),
+      immigration: localStorage.getItem("immigration"),
+      travelling: localStorage.getItem("travelling"),
+      interaction: localStorage.getItem("interaction"),
     }
   }
   state = {
@@ -46,11 +49,27 @@ class Isolation extends Component {
     var data = this.state
     console.log(this.state)
     axios.post("http://localhost:8088/symptom", JSON.stringify(data),{withCredentials:true,headers: {"Content-Type": "application/json"}})
+    if(this.state.immigration=="true"){
+      console.log("ff")
+      window.location.href = `/Immigration`;
+    }
+    if(this.state.immigration=="false"&&this.state.travelling=="true"){
+      console.log("gg")
+      window.location.href = `/Travel`;
+    }
+    if(this.state.immigration=="false"&&this.state.travelling=="false"&&this.state.interaction=="true"){
+      console.log("hh")
+      window.location.href = `/Interaction`;
+    }
+    if(this.state.immigration=="false"&&this.state.travelling=="false"&&this.state.interaction=="false"){
+      console.log("hh")
+      window.location.href = `/history`;
+    }
   };
 
-  onSuggestionChange = (e) => {
+  onIsolationChange = (e) => {
     this.setState({
-      suggestion: e.target.value,
+      isolation: e.target.value,
     });
   }
   changeHandler=(e)=>{
@@ -67,7 +86,7 @@ class Isolation extends Component {
             </div>
           </div>
           <div className="line52">
-            <input type="radio" value="true" name="suggestion"  onChange={this.onSuggestionChange}></input>ใช่
+            <input type="radio" value="true" name="isolation"  onChange={this.onIsolationChange}></input>ใช่
           </div>
           <div className="line53">
             <div className="byWhere">ประเภทของสถานที่ที่ได้รับคำแนะนำ</div>
@@ -88,15 +107,13 @@ class Isolation extends Component {
             </div>
           </div>
           <div className="line511">
-          <input type="radio" value="false" name="suggestion"  onChange={this.onSuggestionChange}></input>ไม่ได้รับการรักษา
+          <input type="radio" value="false" name="isolation"  onChange={this.onIsolationChange}></input>ไม่ได้รับการรักษา
           </div>
         </div>
         <div className="iconNext5">
-          <Link to={"/Interaction"}>
             <button className="next5" type="submit" onClick={this.connect}>
               <img className="INext5" src={buttonNext} />
             </button>
-          </Link>
         </div>
       </div>
     );

@@ -57,7 +57,7 @@ class Interaction extends Component {
             <div className="line83"><input className="address" type="text"value={address} onChange={this.changeHandler}></input></div>
             </div>
             <div className="iconNext8">
-              <Link to={"/immigration"}>
+              <Link to={"/history"}>
                 <button className="next8"type="submit" onClick={this.connect}><img className="INext8" src={buttonNext}/></button>
                 </Link>
                 </div>

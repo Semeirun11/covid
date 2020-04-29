@@ -20,6 +20,8 @@ class Immigration extends Component {
       district: "",
       amphoe: "",
       province: "",
+      travelling: localStorage.getItem("travelling"),
+      interaction: localStorage.getItem("interaction"),
     }
     this.loadProvince();
   }
@@ -84,6 +86,17 @@ class Immigration extends Component {
     var data = this.state
     console.log(this.state)
     axios.post("http://localhost:8088/accommodation", JSON.stringify(data),{withCredentials:true,headers: {"Content-Type": "application/json"}})
+    if(this.state.travelling=="true"){
+      console.log("gg")
+      window.location.href = `/Travel`;
+    }
+    if(this.state.travelling=="false"&&this.state.interaction=="true"){
+      console.log("hh")
+      window.location.href = `/Interaction`;
+    }
+    if(this.state.travelling=="false"&&this.state.interaction=="false"){
+      window.location.href = `/history`;
+    }
   };
 
   render() {
@@ -126,9 +139,7 @@ class Immigration extends Component {
                         </div>
                         </div>
             <div className="iconNext6">
-              <Link to={"/travel"}>
                 <button className="next6" type="submit" onClick={this.connect}><img className="INext6" src={buttonNext}/></button>
-                </Link>
                 </div>
         </div>
     );

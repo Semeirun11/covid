@@ -44,6 +44,30 @@ class Assessment extends Component {
       console.log(this.state)
       await axios.post("http://localhost:8088/assessment", JSON.stringify(data), {withCredentials:true,headers: {"Content-Type": "application/json"}});
       await axios.get("http://localhost:8088/assessment", {withCredentials:true,headers: {"Content-Type": "application/json"}});
+      localStorage.setItem("symptom", this.state.symptom);
+      localStorage.setItem("immigration", this.state.immigration);
+      localStorage.setItem("travelling", this.state.travelling);
+      localStorage.setItem("interaction", this.state.interaction);
+      if(this.state.symptom==true){
+        console.log("ee")
+        window.location.href = `/Symptom`;
+      }
+      if(this.state.symptom==false&&this.state.immigration==true){
+        console.log("ff")
+        window.location.href = `/Immigration`;
+      }
+      if(this.state.symptom==false&&this.state.immigration==false&&this.state.travelling==true){
+        console.log("gg")
+        window.location.href = `/Travel`;
+      }
+      if(this.state.symptom==false&&this.state.immigration==false&&this.state.travelling==false&&this.state.interaction==true){
+        console.log("hh")
+        window.location.href = `/Interaction`;
+      }
+      if(this.state.symptom==false&&this.state.immigration==false&&this.state.travelling==false&&this.state.interaction==false){
+        console.log("hh")
+        window.location.href = `/Interaction`;
+      }
     };
   render() {
     return (
@@ -118,12 +142,10 @@ class Assessment extends Component {
               ไม่ได้ป้องกัน
             </div>
           </div>
-          <div className="iconNext3">
-            <Link to={"/Symptom"}>
+          <div className="iconNext3">   
             <button className="next3" type="submit" onClick={this.connect}>
               <img className="INext3" src={buttonNext} />
             </button>
-            </Link>
           </div>
         </div>
     );
