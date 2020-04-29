@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import buttonNext from "./play-button.png"
 import axios from "axios";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+import 'rc-datepicker/lib/style.css';
+import 'moment/locale/th.js'
+import {DatePickerInput } from 'rc-datepicker';
 import moment from "moment";
 import "./interaction.css";
 class Interaction extends Component {
@@ -47,12 +48,12 @@ class Interaction extends Component {
             <div className="dailyQuestion6">การสัมผัสกลุ่มเสี่ยง</div>
             <div className="answer8">
             <div className="line81">วันที่สัมผัสกลุ่มเสี่ยง
-            <DatePicker className="inputDate"
+            <DatePickerInput className="inputDate"
                             selected={this.state.endDate}
                             onChange={this.dateChange}
                         />
             </div>
-            <div className="line82"><div className="address">หากอาศัยอยู่ในพื้นที่เดียวกันกับกลุ่มเสี่ยง<div>โปรดระบุสถานที่</div></div></div>
+            <div className="line82"><div className="address1">หากอาศัยอยู่ในพื้นที่เดียวกันกับกลุ่มเสี่ยง<div>โปรดระบุสถานที่</div></div></div>
             <div className="line83"><input className="address" type="text"value={address} onChange={this.changeHandler}></input></div>
             </div>
             <div className="iconNext8">

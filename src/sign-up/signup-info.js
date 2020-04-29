@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./signup-info.css";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+import 'rc-datepicker/lib/style.css';
+import 'moment/locale/th.js'
+import {DatePickerInput } from 'rc-datepicker';
 import moment from "moment";
 import axios from "axios";
 class User extends Component {
@@ -14,14 +15,20 @@ class User extends Component {
       personal_id: "",
       job: "",
       telephone: "",
-      address_id: "",
+      address: "",
       district: "",
       amphoe: "",
       province: "",
+      provinceList : [],
+      amphoeList:[],
+      districtList:[],
       postal: "",
       num_live: "",
       email:""
     };
+
+    this.loadProvince();
+    
   }
 
   state = {
@@ -49,11 +56,6 @@ class User extends Component {
       job: e.target.value,
     });
   };
-  // onPWChange = (e) => {
-  //   this.setState({
-  //     password: 1010,
-  //   });
-  // }
   onDistrictChange = (e) => {
     this.setState({
       district: e.target.value,
@@ -62,47 +64,74 @@ class User extends Component {
   onAmphoeChange = (e) => {
     this.setState({
       amphoe: e.target.value,
-    });
+    })
   };
   onProvinceChange = (e) => {
     this.setState({
-      province: e.target.value,
-    });
+      province: e.target.value
+    })
   };
   onnum_liveChange = (e) => {
     this.setState({
       num_live: e.target.value,
     });
   };
-  loadProvince = async() =>{
-    var provinceList = "";
-    var data = "";
-    data = await fetch('http://localhost:8088/address')
-    provinceList = await data.json()
-    console.log(provinceList)
+  loadDistrict = async() =>{
+    var districtList
+    var response2
+    response2 = await fetch(('http://localhost:8088/address?province='+this.state.province+'&amphoe='+this.state.amphoe))
+    districtList = await response2.json()
+    this.setState({
+      districtList : districtList
+    })
+  }
+  loadAmphoe = async() =>{
+    var amphoeList
+    var response1
+    response1 = await fetch(('http://localhost:8088/address?province='+this.state.province))
+    amphoeList = await response1.json()
+    this.setState({
+      amphoeList : amphoeList
+    })
+  }
+  
+  loadProvince=async()=>{
+    var provinceList
+    var response
+    response = await fetch('http://localhost:8088/address')
+    provinceList = await response.json()
+    this.setState({
+      provinceList : provinceList
+    })
+    
   }
 
-  connect=()=> {
+  connect=async()=> {
+    await axios.get(('http://localhost:8088/address?province='+this.state.province+'&amphoe='+this.state.amphoe+'&district='+this.state.district), {withCredentials:true,headers: {"Content-Type": "application/json"}});
     var data = this.state
     console.log(this.state)
-    axios.post("http://localhost:8088/sign-up", JSON.stringify(data),{withCredentials:true,headers: {"Content-Type": "application/json"}})
+    await axios.post("http://localhost:8088/sign-up", JSON.stringify(data),{withCredentials:true,headers: {"Content-Type": "application/json"}})
   };
   
 
   render() {
     const {
-      provinceList,
       name,
       personal_id,
       password,
       telephone,
-      address_id,
+      address,
       email,
       amphoe,
       province,
+      districtList,
+      provinceList,
+      amphoeList,
       postal,
       num_live,
     } = this.state;
+
+
     return (
       <div className="bgSignupInfo">
           <div className="head">SIGN UP</div>
@@ -145,11 +174,13 @@ class User extends Component {
             </div>
             <div className="line3">
               <div className="BDay">วัน/เดือน/ปี เกิด </div>
-              <DatePicker
-                className="inputDate"
+              <div className="space">
+              <DatePickerInput
+                className='my-custom-datepicker-component'
                 selected={this.state.endDate}
                 onChange={this.dateChange}
               />
+              </div>
               <div className="sex">เพศ</div>
               <div className="selectSex">
                 <input
@@ -199,34 +230,29 @@ class User extends Component {
               ></input>
             </div>
             <div className="line6">
-              <div className="address">ที่อยู่ปัจจุบัน</div>
+              <div className="address1">ที่อยู่ปัจจุบัน</div>
               <input
-                className="address_id"
+                className="address"
                 type="text"
-                value={address_id}
+                value={address}
                 onChange={this.changeHandler}
               ></input>
             </div>
             <div className="line7">
-              <div className="district1">ตำบล</div>
-              <select className="district" onChange={this.onDistrictChange}>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
+            <div className="province1">จังหวัด</div>
+              <select className="province" onChange={this.onProvinceChange} onClick={this.loadAmphoe}>
+                <option value="null">จังหวัด</option>
+                { provinceList && provinceList.map(el => <option value={el}>{el}</option>) }
               </select>
               <div className="amphoe1">อำเภอ</div>
-              <select className="amphoe" onChange={this.onAmphoeChange}>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
+              <select className="amphoe" onChange={this.onAmphoeChange} onClick={this.loadDistrict}>
+              <option value="null">อำเภอ</option>
+                { amphoeList && amphoeList.map(el => <option key={el} value={el}>{el}</option>) }
               </select>
-              <div className="province1">จังหวัด</div>
-              <select className="province" onChange={this.onProvinceChange}>
-                {this.provinceList.map( p1=> (
-                  (
-                    <option key={p1} value={p1}> {p1} </option>
-                  )
-                ))}
+              <div className="district1">ตำบล</div>
+              <select className="district" onChange={this.onDistrictChange}>
+              <option value="null">ตำบล</option>
+                { districtList && districtList.map(el => <option value={el}>{el}</option>) }
               </select>
             </div>
             <div className="line5">
@@ -244,14 +270,22 @@ class User extends Component {
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
+                <option value="1">4</option>
+                <option value="2">5</option>
+                <option value="3">6</option>
+                <option value="1">7</option>
+                <option value="2">8</option>
+                <option value="3">9</option>
               </select>
               คน
             </div>
-            {/* <Link to={"/"}> */}
-            <button className="next" type="submit" onClick={this.loadProvince}>
+            <Link to={"/"}>
+            <button className="next" type="submit" 
+            onClick={this.connect}
+            >
               NEXT
             </button>
-            {/* </Link> */}
+            </Link>
           </div>
 
       </div>

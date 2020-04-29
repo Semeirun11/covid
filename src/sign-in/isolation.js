@@ -3,8 +3,9 @@ import buttonNext from "./play-button.png";
 import "./isolation.css";
 import axios from "axios";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+import 'rc-datepicker/lib/style.css';
+import 'moment/locale/th.js'
+import {DatePickerInput } from 'rc-datepicker';
 import moment from "moment";
 class Isolation extends Component {
   constructor(props){
@@ -69,17 +70,18 @@ class Isolation extends Component {
             <input type="radio" value="true" name="suggestion"  onChange={this.onSuggestionChange}></input>ใช่
           </div>
           <div className="line53">
-            <div className="byWhere">ชื่อสถานที่ที่รับคำแนะนำ</div>
+            <div className="byWhere">ประเภทของสถานที่ที่ได้รับคำแนะนำ</div>
           </div>
           <div className="line54">
             <select className="isolation_place" onChange={this.isolation_place}>
-              <option value="Darkplace">สถานที่ปิดทึบ</option>
-              <option value="Crowdedplace">พื้นที่มีคนแออัด</option>
+              <option value="Clinic">คลินิก</option>
+              <option value="Hospital">โรงพยาบาล</option>
+              <option value="Phamacy">ร้านขายยา</option>
             </select></div>
           <div className="line510">
-            <div className="isolation_date">
+            <div className="isolation_date1">
               ไปวันที่
-              <DatePicker className="inputDate"
+              <DatePickerInput className="isolation_date"
                             selected={this.state.endDate}
                             onChange={this.dateChange}
                         />

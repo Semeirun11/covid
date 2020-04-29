@@ -18,12 +18,12 @@
 }
 
 .line61{
-    margin-top: 15vw;
+    margin-top: 12vw;
     margin-left: 14vw;
 }
 .line62{
     margin-top: 1vw;
-    margin-left: 14vw;
+    margin-left: 12.1vw;
 }
 .line63{
     margin-top: 1vw;
@@ -36,6 +36,15 @@
 }
 .line65{
   
+    margin-left: 14vw;
+    margin-top: 1vw;
+}
+.BDay{
+    display: flex;
+}
+.line66{
+    display: flex;
+    align-items: center;
     margin-left: 14vw;
     margin-top: 1vw;
 }
@@ -53,7 +62,7 @@
     background-color: #50E3C2;
     
 }
-.inputAddress{
+.address{
     width: 22vw;
     height: 2vw;
     background: #FFFFFF;

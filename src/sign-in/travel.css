@@ -22,11 +22,11 @@
     font-size: 2vw;
 }
 .line71{
-    margin-top: 5vw;
+    margin-top: 9vw;
     margin-left: 14vw;
 }
 .line72{
-    margin-left: 14vw;
+    margin-left: 12.1vw;
 }
 .line73{
  
@@ -59,14 +59,20 @@
     margin-top: 1vw;
 }
 .line710{
-  
+    display: flex;
     margin-left: 14vw;
     margin-top: 1vw;
 }
 .line711{
-  
+    display: flex;
     margin-left: 14vw;
-    margin-top: 1vw;
+    margin-top: 2vw;
+}
+.inputDate{
+    margin-left: 1vw;
+}
+.outputDate{
+    margin-left: 4vw;
 }
 .line712{
   
@@ -89,10 +95,10 @@
 }
 .selectTypeAddress{
     width: 16vw;
-    height: 2vw;
+    height: 3.5vw ;
     background: #FFFFFF;
     border: 2px solid #C7C6D5;
     color: #4A4A4A;
-    font-size: 1.1vw;
+    font-size: 1.5vw;
     margin-left: 1vw;
 }

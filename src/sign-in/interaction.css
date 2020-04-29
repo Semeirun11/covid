@@ -17,16 +17,23 @@
     font-size: 2vw;
 }
 .line81{
-    margin-top: 9vw;
+    display: flex;
+    margin-top: 17vw;
     margin-left: 10vw;
 }
 .line82{
-    margin-top: 1vw;
+    margin-top: 2vw;
     margin-left: 10vw;
+    
+}
+.address{
+    width: 30vw;
+    height: 3vw;
+
 }
 .line83{
     margin-top: 1vw;
-    margin-left: 10vw;
+    margin-left: 8.3vw;
 }
 .line84{
     margin-top: 1vw;

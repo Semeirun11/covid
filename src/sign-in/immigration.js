@@ -3,8 +3,9 @@ import axios from "axios";
 import buttonNext from "./play-button.png"
 import "./immigration.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+import 'rc-datepicker/lib/style.css';
+import 'moment/locale/th.js'
+import {DatePickerInput } from 'rc-datepicker';
 import moment from "moment";
 class Immigration extends Component {
 
@@ -12,8 +13,15 @@ class Immigration extends Component {
     super(props)
     this.state={
       address:'',
-      postal:''
+      postal:'',
+      provinceList : [],
+      amphoeList:[],
+      districtList:[],
+      district: "",
+      amphoe: "",
+      province: "",
     }
+    this.loadProvince();
   }
   changeHandler=(e)=>{
     this.setState({[e.target.className]:e.target.value})
@@ -30,61 +38,91 @@ class Immigration extends Component {
     this.setState({
       district: e.target.value,
     });
-  }
-
+  };
   onAmphoeChange = (e) => {
     this.setState({
       amphoe: e.target.value,
-    });
-  }
+    })
+  };
   onProvinceChange = (e) => {
     this.setState({
-      province: e.target.value,
-    });
+      province: e.target.value
+    })
+  };
+  loadDistrict = async() =>{
+    var districtList
+    var response2
+    response2 = await fetch(('http://localhost:8088/address?province='+this.state.province+'&amphoe='+this.state.amphoe))
+    districtList = await response2.json()
+    this.setState({
+      districtList : districtList
+    })
   }
-
-  connect=()=> {
+  loadAmphoe = async() =>{
+    var amphoeList
+    var response1
+    response1 = await fetch(('http://localhost:8088/address?province='+this.state.province))
+    amphoeList = await response1.json()
+    this.setState({
+      amphoeList : amphoeList
+    })
+  }
+  
+  loadProvince=async()=>{
+    var provinceList
+    var response
+    response = await fetch('http://localhost:8088/address')
+    provinceList = await response.json()
+    this.setState({
+      provinceList : provinceList
+    })
+    
+  }
+  
+  connect=async()=> {
+    await axios.get(('http://localhost:8088/address?province='+this.state.province+'&amphoe='+this.state.amphoe+'&district='+this.state.district), {withCredentials:true,headers: {"Content-Type": "application/json"}});
     var data = this.state
     console.log(this.state)
     axios.post("http://localhost:8088/accommodation", JSON.stringify(data),{withCredentials:true,headers: {"Content-Type": "application/json"}})
   };
 
   render() {
-    const {address,postal}=this.state
+    const {districtList,
+      provinceList,
+      amphoeList,address,postal}=this.state
     return (
-      <form onSubmit={this.submitHandler}>
       <div className="bgSignupInfo6">
             <div className="dailyQuestion4">รายละเอียดที่พัก</div>
             <div className="answer6">
-            <div className="line61"><div className="address">ตั้งอยู่ที่</div></div>
+            <div className="line61"><div className="address1">ตั้งอยู่ที่</div></div>
             <div className="line62"><input className="address" type="text"value={address} onChange={this.changeHandler}></input></div>
-            <div className="line63">ตำบล
-            <select className="selectDistrict" onChange={this.onDistrictChange}>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
+            <div className="line64">จังหวัด
+            <select className="selectProvince" onChange={this.onProvinceChange} onClick={this.loadAmphoe}>
+            <option value="null">จังหวัด</option>
+            { provinceList && provinceList.map(el => <option value={el}>{el}</option>) }
             </select></div>
             <div className="line63">อำเภอ
-            <select className="selectAmphoe" onChange={this.onAmphoeChange}>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
+            <select className="selectAmphoe" onChange={this.onAmphoeChange} onClick={this.loadDistrict}>
+            <option value="null">อำเภอ</option>
+            { amphoeList && amphoeList.map(el => <option key={el} value={el}>{el}</option>) }
             </select></div>
-            <div className="line64">จังหวัด
-            <select className="selectProvince" onChange={this.onProvinceChange}>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
+            <div className="line63">ตำบล
+            <select className="selectDistrict" onChange={this.onDistrictChange}>
+            <option value="null">ตำบล</option>
+            { districtList && districtList.map(el => <option value={el}>{el}</option>) }
             </select></div>
+           
+            
             <div className="line65">รหัสไปรษณีย์
             <input className="postal" type="text"value={postal} onChange={this.changeHandler}></input></div>
             
-            <div className="line3">
-            <div className="BDay">วันที่ย้ายเข้า </div>
-            <DatePicker className="inputDate"
+            <div className="line66">
+            <div className="BDay">วันที่ย้ายเข้า 
+            <DatePickerInput className="inputDate"
                             selected={this.state.endDate}
                             onChange={this.dateChange}
                         />
+                        </div>
                         </div>
                         </div>
             <div className="iconNext6">
@@ -93,7 +131,6 @@ class Immigration extends Component {
                 </Link>
                 </div>
         </div>
-        </form>
     );
   }
 }

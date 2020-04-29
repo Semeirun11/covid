@@ -18,7 +18,7 @@
 }
 
 .line51{
-    margin-top: 7vw;
+    margin-top: 12vw;
     margin-left: 10vw;
 }
 .line52{
@@ -54,6 +54,7 @@
     margin-left: 14.5vw;
 }
 .line510{
+    display: flex;
     margin-top: 1vw;
     margin-left: 14.5vw;
 }
@@ -70,14 +71,15 @@
     font-size: 1.1vw;
     margin-left: 0vw !important;
 }
-.isolation_placetype{
+.isolation_place{
     width: 22vw;
-    height: 2vw;
+    height: 3vw;
     background: #FFFFFF;
     border: 2px solid #C7C6D5;
     color: #4A4A4A;
-    font-size: 1.1vw;
+    font-size: 1.5vw;
     margin-left: 0vw;
+    margin-top: 1vw;
 }
 .selectDistrict{
     width: 10vw;
@@ -106,6 +108,14 @@
     font-size: 1.1vw;
     margin-left: 1vw;
 }
+.isolation_date1{
+display: flex;
+align-items: center;
+}
+.isolation_date{
+    margin-left: 2vw;
+    width: 4vw;
+    }
 .iconNext5{
     display: flex;
     background-color: #50E3C2;
