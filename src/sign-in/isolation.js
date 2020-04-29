@@ -26,6 +26,7 @@ class Isolation extends Component {
       immigration: localStorage.getItem("immigration"),
       travelling: localStorage.getItem("travelling"),
       interaction: localStorage.getItem("interaction"),
+      d_other: localStorage.getItem("d_other"),
     }
   }
   state = {

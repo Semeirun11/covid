@@ -3,6 +3,12 @@ import buttonNext from "./play-button.png"
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./symptom.css";
 class Symptom extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      d_other:''
+    };
+  }
 
   state = { fever: false }
   handleFeverChange = event =>
@@ -57,6 +63,7 @@ class Symptom extends Component {
       localStorage.setItem("soreThroat", this.state.soreThroat);
       localStorage.setItem("steam", this.state.steam);
       localStorage.setItem("fever", this.state.fever);
+      localStorage.setItem("d_other", this.state.d_other);
     };
 
   render() {

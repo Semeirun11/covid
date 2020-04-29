@@ -66,7 +66,7 @@ class Assessment extends Component {
       }
       if(this.state.symptom==false&&this.state.immigration==false&&this.state.travelling==false&&this.state.interaction==false){
         console.log("hh")
-        window.location.href = `/Interaction`;
+        window.location.href = `/history`;
       }
     };
   render() {

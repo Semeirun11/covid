@@ -72,7 +72,6 @@ class Travel extends Component {
   render() {
     const {address,inputPostal}=this.state
     return (
-      <form onSubmit={this.submitHandler}>
       <div className="bgSignupInfo7">
             <div className="dailyQuestion5">การเดินทางออกนอกจังหวัด หรือ นอกประเทศ</div>
             <div className="answer7">
@@ -106,7 +105,6 @@ class Travel extends Component {
                 <button className="next7" type="submit" onClick={this.connect}><img className="INext7" src={buttonNext}/></button>
                 </div>
         </div>
-        </form>
     );
   }
 }
