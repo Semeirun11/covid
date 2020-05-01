@@ -6,7 +6,17 @@ class Symptom extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      d_other:''
+      d_other:'',
+      fever:'false',
+      steam:'false',
+      soreThroat:'false',
+      snot:'false',
+      tired:'false',
+      headache:'false',
+      sleepless:'false',
+      boredFood:'false',
+      ache:'false',
+      weary:'false',
     };
   }
 

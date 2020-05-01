@@ -110,6 +110,7 @@ class User extends Component {
     var data = this.state
     console.log(this.state)
     await axios.post("http://localhost:8088/sign-up", JSON.stringify(data),{withCredentials:true,headers: {"Content-Type": "application/json"}})
+    await axios.post("http://localhost:8088/sign-in", JSON.stringify(data),{withCredentials:true,headers: {"Content-Type": "application/json"}})
   };
   
 
@@ -278,7 +279,7 @@ class User extends Component {
               </select>
               คน
             </div>
-            <Link to={"/"}>
+            <Link to={"/Disease"}>
             <button className="next" type="submit" 
             onClick={this.connect}
             >

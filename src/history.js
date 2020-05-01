@@ -10,33 +10,43 @@ class History extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      resultHistory:[]
+      resultHistory:[],
+      id:''
     }
     this.loadDataResult(); 
   }
+
+
   loadDataResult=async()=>{
     var response = await axios.get(('http://localhost:8088/assessment'), {withCredentials:true,headers: {"Content-Type": "application/json"}});
     this.setState({
       resultHistory : response.data
     });
-
     console.log("respoonse.data = ", response.data)
-    // console.log("onload = ", this.state)
   }
-  // loopForImmigration=()=>{
-  //   var i
-  //   console.log(this.state.response[0])
-  //   for(i=0;i<=this.state.response.length-1;i++){
-  //     return <div>{this.state.response[i].immigration}</div>
-  //   }
-  // }
+  onClickLockout=async()=>{
+    await axios.get(('http://localhost:8088/sign-out'), {withCredentials:true,headers: {"Content-Type": "application/json"}});
+    window.location.href=`/`
+  }
 
+  onClickDetail=async(e)=>{
+     await this.setState({
+      id: e.target.value,
+    });
+    
+    if(this.state.id!=undefined){
+      localStorage.setItem("id", this.state.id);
+      console.log(this.state.id)
+      window.location.href=`/detailResult`
+    }
+  }
+  
   render() {
     const {
       resultHistory
     } = this.state;
     return (<div className="historyBackground">
-        <div className="topBar"><div className="userName">DanuwaHeng</div><div className="userName">Log out</div></div>
+        <div className="topBar"><div className="userName">DanuwaHeng</div><div className="logOut" onClick={this.onClickLockout}>Log out</div></div>
         <div className="resultHistory">
             <div className="headHistory">HISTORY</div>
             <div className="result">
@@ -51,13 +61,13 @@ class History extends Component {
                
                 
                 {resultHistory && resultHistory.map(data => <div key={data._id}>
-                <div className="dataResult">
-                <div className="dateStampHistory">{data.timestamp.substr(0, 10)}</div>
+                <button className="dataResult" onClick={this.onClickDetail} value={data._id}>
+                <div className="dateStampHistory" value={localStorage.setItem("date", data.timestamp.substr(0, 10))} >{data.timestamp.substr(0, 10)}</div>
                 <div className="symptomHistory">{data.symptom===true ? 'TRUE' : 'FALSE'}</div>
                 <div className="immigrationHistory">{data.immigration===true ? 'TRUE' : 'FALSE'}</div>
                 <div className="travellingHistory">{data.travelling===true ? 'TRUE' : 'FALSE'}</div>
                 <div className="interactionHistory">{data.interaction===true ? 'TRUE' : 'FALSE'}</div>
-                </div></div>
+                </button></div>
                 )}
                 
             </div>

@@ -13,6 +13,7 @@ import Travel from "./sign-in/travel.js";
 import Interaction from "./sign-in/interaction.js";
 import test from "./test.js";
 import History from "./history.js";
+import detailResult from "./detailResult.js"
 
 class App extends Component {
   constructor(props) {
@@ -55,6 +56,7 @@ class App extends Component {
           <Route path="/Interaction" component={Interaction} />
           <Route path="/test" component={test} />
           <Route path="/history" component={History} />
+          <Route path="/detailResult" component={detailResult} />
           <div className="bgLogin">
             <div className="content">
               <div className="headSignin">SIGN IN</div>

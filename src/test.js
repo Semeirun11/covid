@@ -6,34 +6,26 @@ class test extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: 'Danuwasin Smalldick',
-      personal_id: null,
-      email: null,
-      password: '4444',
-      birthday: null,
-      sex: null,
-      telephone: null,
-      job: null,
-      addressing: null,
-      num_live: null
+      id:''
     };
   }
 
-  handleSubmit(event) {
-    console.log(this.state)
-    event.preventDefault();
-    fetch('http://localhost:8088/sign-up', {
-      method: 'post',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name: this.state.name, password: this.state.password })
+  
+
+  onClickSet=async(e)=>{
+    await this.setState({
+      id: e.target.value,
     });
-  };
+    console.log(this.state.id)
+  }
 
   render() {
     return (
       <div className="App">
         <div>
-          <button className='btnReg' onClick={this.handleSubmit}>Click Me Please</button>
+          <button value="aaa" onClick={this.onClickSet}>AAA</button>
+          <button value="bbb" onClick={this.onClickSet}>BBB</button>
+          <button value="ccc" onClick={this.onClickSet}>CCC</button>
         </div>
       </div>
     );

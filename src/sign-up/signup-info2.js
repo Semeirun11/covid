@@ -10,7 +10,14 @@ class Disease extends React.Component {
     this.state={
       disease:'false',
       smoke:'false',
-      dc_other:''
+      dc_other:'',
+      highBlood:'false',
+      diabetes:'false',
+      hightFat:'false',
+      kidneyFail:'false',
+      asthma:'false',
+      emphysema:'false',
+      heartDisease:'false',
     }
   }
 
@@ -45,7 +52,7 @@ class Disease extends React.Component {
 
     state = { other: false }
   handleOtherChange = event =>
-    this.setState({ other: event.target.checked, })
+    this.setState({ dc_other: event.target.checked, })
 
   changeHandler=(e)=>{
     this.setState({[e.target.className]:e.target.value})
@@ -70,7 +77,7 @@ class Disease extends React.Component {
   connect=()=> {
     var data = this.state
     console.log(this.state)
-    axios.post("http://localhost:8088/sign-up", JSON.stringify(data),{withCredentials:true,headers: {"Content-Type": "application/json"}})
+    axios.post("http://localhost:8088/personal-health-issue", JSON.stringify(data),{withCredentials:true,headers: {"Content-Type": "application/json"}})
   };
   render() {
     const {dc_other}=this.state

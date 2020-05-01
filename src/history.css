@@ -54,6 +54,7 @@
     overflow: scroll;
 }
 .dataResult{
+    border:none;
     display: flex;
     margin-top: 1vw;
     margin-left: 3vw;
@@ -66,7 +67,6 @@
 }
 .dateStampHistory{
     padding-left: 5vw;
-    background-color: ;
 }
 .symptomHistory{
     padding-left: 4vw;
@@ -82,5 +82,52 @@
 }
 .interactionHistory{
     padding-left: 14vw;
+}
+.headSymptom{
+    font-size: 2vw;
+    font-weight: bold;
+    padding-left: 10vw;
+    padding-top: 2vw;
+}
+.headTravelling{
+    font-size: 2vw;
+    font-weight: bold;
+    padding-left: 10vw;
+    padding-top: 2vw;
+}
+.headInteraction{
+    font-size: 2vw;
+    font-weight: bold;
+    padding-left: 10vw;
+    padding-top: 2vw;
+}
+.headImmigration{
+    font-size: 2vw;
+    font-weight: bold;
+    padding-left: 10vw;
+    padding-top: 2vw;
+}
+.responseSymptom{
+    padding-left: 12vw;
+}
+.responseTravelling{
+    padding-left:12vw;
+}
+.responseInteraction{
+    padding-left: 12vw;
+}
+.responseImmigration{
+    padding-left: 12vw;
+    padding-bottom: 8vw;
+}
+.resultDetailHistory{
+    height:39vw;
+    overflow: scroll;
+}
+.dateDetail{
+    padding-top: 3vw;
+    padding-left: 6vw;
+    font-size: 3vw;
+    font-weight: bold;
 }
 
