@@ -60,14 +60,16 @@ class History extends Component {
 
                
                 
-                {resultHistory && resultHistory.map(data => <div key={data._id}>
-                <button className="dataResult" onClick={this.onClickDetail} value={data._id}>
-                <div className="dateStampHistory" value={localStorage.setItem("date", data.timestamp.substr(0, 10))} >{data.timestamp.substr(0, 10)}</div>
-                <div className="symptomHistory">{data.symptom===true ? 'TRUE' : 'FALSE'}</div>
-                <div className="immigrationHistory">{data.immigration===true ? 'TRUE' : 'FALSE'}</div>
-                <div className="travellingHistory">{data.travelling===true ? 'TRUE' : 'FALSE'}</div>
-                <div className="interactionHistory">{data.interaction===true ? 'TRUE' : 'FALSE'}</div>
-                </button></div>
+                {resultHistory && resultHistory.map(data => 
+                <div key={data._id}>
+                  <button className="dataResult" onClick={this.onClickDetail} value={data._id}>
+                  <div className="dateStampHistory" value={localStorage.setItem("date", data.timestamp.substr(0, 10))} >{data.timestamp.substr(0, 10)}</div>
+                  <div className="symptomHistory">{data.symptom===true ? 'TRUE' : 'FALSE'}</div>
+                  <div className="immigrationHistory">{data.immigration===true ? 'TRUE' : 'FALSE'}</div>
+                  <div className="travellingHistory">{data.travelling===true ? 'TRUE' : 'FALSE'}</div>
+                  <div className="interactionHistory">{data.interaction===true ? 'TRUE' : 'FALSE'}</div>
+                  </button>
+                </div>
                 )}
                 
             </div>

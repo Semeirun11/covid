@@ -1,74 +1,25 @@
-.bgLogin{
+.homePage{
+  display: flex;
   background-color: #F4F4FB;
   font-family: 'Montserrat', sans-serif;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-.content{
-  padding-top:10vw;
-  padding-left: 35vw;
-  padding-bottom: 22vw;
+.logo{
+  width:25vw;
+  padding-top: 8vw;
+  padding-bottom: 2vw;
 }
-.headSignin{
-  color: #4A4A4A;
-  font-size: 3vw;
-  font-style: normal;
-  font-weight: bold;
+.enterSite{
+     margin-left: 1vw;
+     background: #50E3C2;
+     border-radius: 20px;
+     color: #FFFFFF;
+     border: none;
+     width: 10vw;
+     height: 3vw;
+     font-weight: bold;
+     font-size: 1.1vw;
+     margin-bottom: 9vw;
 }
-.e-mail{
-  margin-left: 3vw;
-  color: #4A4A4A;
-  font-size: 2vw;
-  font-style: normal;
-}
-.inputE-mail{
-  width: 20vw;
-  height: 2vw;
-  margin-left: 3vw;
-  background: #FFFFFF;
-  border: 2px solid #C7C6D5;
-  color: #4A4A4A;
-  font-size: 1.1vw;
-}
-.password1{
-  margin-left: 3vw;
-  color: #4A4A4A;
-  font-size: 2vw;
-  font-style: normal;
-}
-.inputPassword{
-  width: 20vw;
-  height: 2vw;
-  margin-left: 3vw;
-  background: #FFFFFF;
-  border: 2px solid #C7C6D5;
-  color: #4A4A4A;
-  font-size: 1.1vw;
-}
- .btSigninSingout{
-   margin-top:1vw;
-   display: flex;
-   margin-left: 13vw;
-   font-weight: bold;
-   
- }
- .signup{
-    color: #4A4A4A;
-    text-decoration-line: underline;
-    align-self:flex-end;
-    font-size: 1.2vw;
-    
- }
- .text{
-   margin-left: 1vw;
-   align-self:flex-end;
- }
- .signin{
-   margin-left: 1vw;
-   background: #50E3C2;
-   border-radius: 20px;
-   color: #FFFFFF;
-   border: none;
-   width: 6.5vw;
-   height: 3vw;
-   font-weight: bold;
-   font-size: 1.1vw;
- }
