@@ -77,7 +77,7 @@ class Disease extends React.Component {
   connect=()=> {
     var data = this.state
     console.log(this.state)
-    axios.post("http://localhost:8088/personal-health-issue", JSON.stringify(data),{withCredentials:true,headers: {"Content-Type": "application/json"}})
+    axios.post("http://aiecovid.com:8088/personal-health-issue", JSON.stringify(data),{withCredentials:true,headers: {"Content-Type": "application/json"}})
   };
   render() {
     const {dc_other}=this.state

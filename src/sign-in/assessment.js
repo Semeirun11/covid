@@ -43,8 +43,8 @@ class Assessment extends Component {
      connect= async()=> {
       var data = this.state
       console.log(this.state)
-      await axios.post("http://localhost:8088/assessment", JSON.stringify(data), {withCredentials:true,headers: {"Content-Type": "application/json"}});
-      await axios.get("http://localhost:8088/assessment", {withCredentials:true,headers: {"Content-Type": "application/json"}});
+      await axios.post("http://aiecovid.com:8088/assessment", JSON.stringify(data), {withCredentials:true,headers: {"Content-Type": "application/json"}});
+      await axios.get("http://aiecovid.com:8088/assessment", {withCredentials:true,headers: {"Content-Type": "application/json"}});
       localStorage.setItem("symptom", this.state.symptom);
       localStorage.setItem("immigration", this.state.immigration);
       localStorage.setItem("travelling", this.state.travelling);

@@ -20,15 +20,15 @@ class History extends Component {
     this.loadDataResult(); 
   }
   onClickLockout=async()=>{
-    await axios.get(('http://localhost:8088/sign-out'), {withCredentials:true,headers: {"Content-Type": "application/json"}});
+    await axios.get(('http://aiecovid.com:8088/sign-out'), {withCredentials:true,headers: {"Content-Type": "application/json"}});
     window.location.href=`/`
   }
 
   loadDataResult=async()=>{
-    var responseImmigration = await axios.get(('http://localhost:8088/immigration?assessment_id='+this.state.id), {withCredentials:true,headers: {"Content-Type": "application/json"}});
-    var responseTravelling = await axios.get(('http://localhost:8088/travelling?assessment_id='+this.state.id), {withCredentials:true,headers: {"Content-Type": "application/json"}});
-    var responseInteraction = await axios.get(('http://localhost:8088/interaction?assessment_id='+this.state.id), {withCredentials:true,headers: {"Content-Type": "application/json"}});
-    var responseSymptom = await axios.get(('http://localhost:8088/symptom?assessment_id='+this.state.id), {withCredentials:true,headers: {"Content-Type": "application/json"}});
+    var responseImmigration = await axios.get(('http://aiecovid.com:8088/immigration?assessment_id='+this.state.id), {withCredentials:true,headers: {"Content-Type": "application/json"}});
+    var responseTravelling = await axios.get(('http://aiecovid.com:8088/travelling?assessment_id='+this.state.id), {withCredentials:true,headers: {"Content-Type": "application/json"}});
+    var responseInteraction = await axios.get(('http://aiecovid.com:8088/interaction?assessment_id='+this.state.id), {withCredentials:true,headers: {"Content-Type": "application/json"}});
+    var responseSymptom = await axios.get(('http://aiecovid.com:8088/symptom?assessment_id='+this.state.id), {withCredentials:true,headers: {"Content-Type": "application/json"}});
     this.setState({
         responseImmigration : responseImmigration.data,
         responseTravelling : responseTravelling.data,

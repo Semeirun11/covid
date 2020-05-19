@@ -18,14 +18,14 @@ class History extends Component {
 
 
   loadDataResult=async()=>{
-    var response = await axios.get(('http://localhost:8088/assessment'), {withCredentials:true,headers: {"Content-Type": "application/json"}});
+    var response = await axios.get(('http://aiecovid.com:8088/assessment'), {withCredentials:true,headers: {"Content-Type": "application/json"}});
     this.setState({
       resultHistory : response.data
     });
     console.log("respoonse.data = ", response.data)
   }
   onClickLockout=async()=>{
-    await axios.get(('http://localhost:8088/sign-out'), {withCredentials:true,headers: {"Content-Type": "application/json"}});
+    await axios.get(('http://aiecovid.com:8088/sign-out'), {withCredentials:true,headers: {"Content-Type": "application/json"}});
     window.location.href=`/`
   }
 

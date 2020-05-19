@@ -54,7 +54,7 @@ class Immigration extends Component {
   loadDistrict = async() =>{
     var districtList
     var response2
-    response2 = await fetch(('http://localhost:8088/address?province='+this.state.province+'&amphoe='+this.state.amphoe))
+    response2 = await fetch(('http://aiecovid.com:8088/address?province='+this.state.province+'&amphoe='+this.state.amphoe))
     districtList = await response2.json()
     this.setState({
       districtList : districtList
@@ -63,7 +63,7 @@ class Immigration extends Component {
   loadAmphoe = async() =>{
     var amphoeList
     var response1
-    response1 = await fetch(('http://localhost:8088/address?province='+this.state.province))
+    response1 = await fetch(('http://aiecovid.com:8088/address?province='+this.state.province))
     amphoeList = await response1.json()
     this.setState({
       amphoeList : amphoeList
@@ -73,7 +73,7 @@ class Immigration extends Component {
   loadProvince=async()=>{
     var provinceList
     var response
-    response = await fetch('http://localhost:8088/address')
+    response = await fetch('http://aiecovid.com:8088/address')
     provinceList = await response.json()
     this.setState({
       provinceList : provinceList
@@ -82,10 +82,10 @@ class Immigration extends Component {
   }
   
   connect=async()=> {
-    await axios.get(('http://localhost:8088/address?province='+this.state.province+'&amphoe='+this.state.amphoe+'&district='+this.state.district), {withCredentials:true,headers: {"Content-Type": "application/json"}});
+    await axios.get(('http://aiecovid.com:8088/address?province='+this.state.province+'&amphoe='+this.state.amphoe+'&district='+this.state.district), {withCredentials:true,headers: {"Content-Type": "application/json"}});
     var data = this.state
     console.log(this.state)
-    axios.post("http://localhost:8088/accommodation", JSON.stringify(data),{withCredentials:true,headers: {"Content-Type": "application/json"}})
+    axios.post("http://aiecovid.com:8088/accommodation", JSON.stringify(data),{withCredentials:true,headers: {"Content-Type": "application/json"}})
     if(this.state.travelling=="true"){
       console.log("gg")
       window.location.href = `/Travel`;

@@ -49,7 +49,7 @@ class Isolation extends Component {
   connect=()=> {
     var data = this.state
     console.log(this.state)
-    axios.post("http://localhost:8088/symptom", JSON.stringify(data),{withCredentials:true,headers: {"Content-Type": "application/json"}})
+    axios.post("http://aiecovid.com:8088/symptom", JSON.stringify(data),{withCredentials:true,headers: {"Content-Type": "application/json"}})
     if(this.state.immigration=="true"){
       console.log("ff")
       window.location.href = `/Immigration`;

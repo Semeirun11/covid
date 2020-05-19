@@ -60,7 +60,7 @@ class Travel extends Component {
   connect=()=> {
     var data = this.state
     console.log(this.state)
-    axios.post("http://localhost:8088/travel-history", JSON.stringify(data),{withCredentials:true,headers: {"Content-Type": "application/json"}})
+    axios.post("http://aiecovid.com:8088/travel-history", JSON.stringify(data),{withCredentials:true,headers: {"Content-Type": "application/json"}})
     if(this.state.interaction=="true"){
       console.log("hh")
       window.location.href = `/Interaction`;
